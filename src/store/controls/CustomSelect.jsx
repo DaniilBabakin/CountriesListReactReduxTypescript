@@ -1,6 +1,5 @@
-import styled from 'styled-components';
-
-import Select from 'react-select';
+import Select from 'react-select'
+import styled from 'styled-components'
 
 export const CustomSelect = styled(Select).attrs({
   styles: {
@@ -18,9 +17,7 @@ export const CustomSelect = styled(Select).attrs({
       ...provided,
       cursor: 'pointer',
       color: 'var(--colors-text)',
-      backgroundColor: state.isSelected
-        ? 'var(--colors-bg)'
-        : 'var(--colors-ui-base)',
+      backgroundColor: state.isSelected ? 'var(--colors-bg)' : 'var(--colors-ui-base)',
     }),
   },
 })`
@@ -44,4 +41,4 @@ export const CustomSelect = styled(Select).attrs({
   & > div[id] {
     background-color: var(--colors-ui-base);
   }
-`;
+`

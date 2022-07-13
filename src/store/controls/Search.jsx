@@ -1,9 +1,8 @@
-import styled from 'styled-components';
+import { IoSearch } from 'react-icons/io5'
+import styled from 'styled-components'
+import { useTypedDispatch, useTypedSelector } from 'types'
 
-import { IoSearch } from 'react-icons/io5';
-import { useTypedDispatch, useTypedSelector } from '../types';
-import { selectSearch } from '../store/controls/controls-selectors';
-import { setSearch } from '../store/controls/controls-action';
+import { selectSearch, setSearch } from './ControlSlice'
 
 const InputContainer = styled.label`
   background-color: var(--colors-ui-base);
@@ -20,7 +19,7 @@ const InputContainer = styled.label`
     margin-bottom: 0;
     width: 280px;
   }
-`;
+`
 
 const Input = styled.input.attrs({
   type: 'search',
@@ -31,20 +30,20 @@ const Input = styled.input.attrs({
   outline: none;
   color: var(--color-text);
   background-color: var(--colors-ui-base);
-`;
+`
 
 export const Search = () => {
   const dispatch = useTypedDispatch()
   const search = useTypedSelector(selectSearch)
 
-  const handleSearch = (event:any) => {
+  const handleSearch = (event: any) => {
     dispatch(setSearch(event.target.value))
   }
 
   return (
     <InputContainer>
       <IoSearch />
-      <Input onChange={handleSearch} value={search}/>
+      <Input onChange={handleSearch} value={search} />
     </InputContainer>
-  );
-};
+  )
+}
